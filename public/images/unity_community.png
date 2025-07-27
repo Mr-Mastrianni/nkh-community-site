@@ -1,0 +1,16 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="unityGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0891b2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#unityGradient)"/>
+  <circle cx="200" cy="120" r="15" fill="rgba(255,255,255,0.4)"/>
+  <circle cx="160" cy="160" r="15" fill="rgba(255,255,255,0.4)"/>
+  <circle cx="240" cy="160" r="15" fill="rgba(255,255,255,0.4)"/>
+  <circle cx="180" cy="200" r="15" fill="rgba(255,255,255,0.4)"/>
+  <circle cx="220" cy="200" r="15" fill="rgba(255,255,255,0.4)"/>
+  <path d="M200 135 L160 175 M200 135 L240 175 M160 175 L180 215 M240 175 L220 215 M180 215 L220 215" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+  <text x="200" y="280" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Unity</text>
+</svg>

@@ -1,0 +1,206 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// User model for authentication and social features
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  role      UserRole @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  lastLoginAt DateTime?
+
+  // Profile information
+  profile UserProfile?
+
+  // Blog relationships
+  blogPosts BlogPost[]
+
+  // Social relationships
+  following Follow[] @relation("Follower")
+  followers Follow[] @relation("Following")
+  
+  // Messaging
+  sentMessages     Message[] @relation("MessageSender")
+  receivedMessages Message[] @relation("MessageReceiver")
+  
+  // Notifications
+  notifications Notification[]
+
+  @@map("users")
+}
+
+model UserProfile {
+  id     String @id @default(cuid())
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  bio           String?
+  avatar        String?
+  location      String?
+  website       String?
+  birthDate     DateTime?
+  astrologicalSign String?
+  
+  // Spiritual/healing preferences
+  interests     String?  // JSON string of interests array
+  practiceLevel String?  // beginner, intermediate, advanced
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("user_profiles")
+}
+
+enum UserRole {
+  USER
+  AUTHOR
+  EDITOR
+  SUPER_ADMIN
+}
+
+// Blog models
+model BlogPost {
+  id          String     @id @default(cuid())
+  title       String
+  slug        String     @unique
+  content     String
+  excerpt     String
+  tags        String     // JSON string of tags array
+  status      PostStatus @default(DRAFT)
+  publishedAt DateTime?
+  scheduledFor DateTime?
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  // Author relationship
+  authorId String
+  author   User   @relation(fields: [authorId], references: [id], onDelete: Cascade)
+
+  // Featured image relationship
+  featuredImageId String?
+  featuredImage   MediaFile? @relation(fields: [featuredImageId], references: [id])
+
+  // SEO and metadata
+  seoTitle       String?
+  seoDescription String?
+  canonicalUrl   String?
+  readingTime    Int?
+  wordCount      Int?
+
+  @@map("blog_posts")
+}
+
+enum PostStatus {
+  DRAFT
+  PUBLISHED
+  SCHEDULED
+  ARCHIVED
+}
+
+// Media management
+model MediaFile {
+  id           String   @id @default(cuid())
+  filename     String
+  originalName String
+  mimeType     String
+  size         Int
+  url          String
+  thumbnailUrl String?
+  altText      String?
+  caption      String?
+  uploadedAt   DateTime @default(now())
+
+  // Metadata
+  width     Int?
+  height    Int?
+  duration  Int? // For videos
+  format    String
+  optimized Boolean @default(false)
+
+  // Relationships
+  blogPosts BlogPost[]
+
+  @@map("media_files")
+}
+
+// Social features
+model Follow {
+  id          String   @id @default(cuid())
+  followerId  String
+  followingId String
+  createdAt   DateTime @default(now())
+
+  follower  User @relation("Follower", fields: [followerId], references: [id], onDelete: Cascade)
+  following User @relation("Following", fields: [followingId], references: [id], onDelete: Cascade)
+
+  @@unique([followerId, followingId])
+  @@map("follows")
+}
+
+model Message {
+  id         String      @id @default(cuid())
+  content    String
+  senderId   String
+  receiverId String
+  status     MessageStatus @default(SENT)
+  createdAt  DateTime    @default(now())
+  readAt     DateTime?
+
+  sender   User @relation("MessageSender", fields: [senderId], references: [id], onDelete: Cascade)
+  receiver User @relation("MessageReceiver", fields: [receiverId], references: [id], onDelete: Cascade)
+
+  @@map("messages")
+}
+
+enum MessageStatus {
+  SENT
+  DELIVERED
+  READ
+}
+
+model Notification {
+  id        String           @id @default(cuid())
+  userId    String
+  type      NotificationType
+  title     String
+  content   String
+  data      Json? // Additional data as JSON
+  read      Boolean          @default(false)
+  createdAt DateTime         @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("notifications")
+}
+
+enum NotificationType {
+  FOLLOW
+  MESSAGE
+  BLOG_POST
+  SYSTEM
+}
+
+// Newsletter subscriptions
+model NewsletterSubscription {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  isActive    Boolean  @default(true)
+  subscribedAt DateTime @default(now())
+  unsubscribedAt DateTime?
+
+  @@map("newsletter_subscriptions")
+}

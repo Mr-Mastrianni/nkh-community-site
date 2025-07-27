@@ -1,0 +1,14 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wellnessGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#059669;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#wellnessGradient)"/>
+  <path d="M200 80 Q180 100 180 130 Q180 160 200 180 Q220 160 220 130 Q220 100 200 80" fill="rgba(255,255,255,0.3)"/>
+  <path d="M170 120 Q150 130 150 150 Q150 170 170 180" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="3"/>
+  <path d="M230 120 Q250 130 250 150 Q250 170 230 180" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="3"/>
+  <circle cx="200" cy="200" r="8" fill="rgba(255,255,255,0.5)"/>
+  <text x="200" y="280" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Natural Wellness</text>
+</svg>

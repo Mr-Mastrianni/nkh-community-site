@@ -1,0 +1,17 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="planetaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e1b4b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0891b2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#planetaryGradient)"/>
+  <circle cx="120" cy="100" r="12" fill="rgba(255,255,255,0.8)"/>
+  <circle cx="200" cy="80" r="18" fill="rgba(255,255,255,0.6)"/>
+  <circle cx="280" cy="120" r="15" fill="rgba(255,255,255,0.7)"/>
+  <circle cx="160" cy="180" r="10" fill="rgba(255,255,255,0.5)"/>
+  <circle cx="240" cy="200" r="8" fill="rgba(255,255,255,0.4)"/>
+  <path d="M120 100 Q160 140 200 80 Q240 160 280 120" stroke="rgba(255,255,255,0.3)" stroke-width="2" fill="none"/>
+  <text x="200" y="280" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Planetary Events</text>
+</svg>

@@ -1,0 +1,386 @@
+    at async DevServer.handleRequestImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\base-server.js:818:17)
+    at async C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:179:21)
+    at async handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:359:24)
+    at async requestHandlerImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:383:13)
+    at async Server.requestListener (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\start-server.js:141:13)
+Error calculating planetary positions: Error: Failed to calculate position for Sun: Invalid tropical longitude for Sun: undefined
+    at calculatePlanetPosition (webpack-internal:///(api)/./pages/api/planetary-positions.ts:150:23)
+    at handler (webpack-internal:///(api)/./pages/api/planetary-positions.ts:154:13)
+    at K (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:2877)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async U.render (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:3955)
+    at async DevServer.runApi (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:603:9)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:269:37)
+    at async DevServer.handleRequestImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\base-server.js:818:17)
+    at async C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:179:21)
+    at async handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:359:24)
+    at async requestHandlerImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:383:13)
+    at async Server.requestListener (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\start-server.js:141:13)
+ GET /api/planetary-positions?date=2025-07-25T13:58:14.606Z 500 in 8ms
+Calculating ayanamsa for Julian Day: 2460881.9154468286
+Using Lahiri ayanamsa (SE_SIDM_LAHIRI = 1)
+Sidereal mode set successfully
+Successfully calculated ayanamsa: 24.214200023522835
+Calculating position for Sun (ID: 0)
+Raw planet data for Sun: {
+  flag: 258,
+  error: '',
+  data: [
+    122.7263134834429,
+    0.00004240928094808549,
+    1.0157124788561636,
+    0.9557155752119577,
+    -0.000009892085686083931,
+    -0.00009544922324517781
+  ]
+}
+Planet data type: object
+Is array: false
+Object properties for Sun: [ 'flag', 'error', 'data' ]
+Sun - Tropical longitude: undefined, Ayanamsa: 24.214200023522835
+Error calculating position for Sun: Error: Invalid tropical longitude for Sun: undefined
+    at calculatePlanetPosition (webpack-internal:///(api)/./pages/api/planetary-positions.ts:117:27)
+    at handler (webpack-internal:///(api)/./pages/api/planetary-positions.ts:154:13)
+    at K (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:2877)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async U.render (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:3955)
+    at async DevServer.runApi (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:603:9)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:269:37)
+    at async DevServer.handleRequestImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\base-server.js:818:17)
+    at async C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:179:21)
+    at async handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:359:24)
+    at async requestHandlerImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:383:13)
+    at async Server.requestListener (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\start-server.js:141:13)
+Error calculating planetary positions: Error: Failed to calculate position for Sun: Invalid tropical longitude for Sun: undefined
+    at calculatePlanetPosition (webpack-internal:///(api)/./pages/api/planetary-positions.ts:150:23)
+    at handler (webpack-internal:///(api)/./pages/api/planetary-positions.ts:154:13)
+    at K (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:2877)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async U.render (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:3955)
+    at async DevServer.runApi (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:603:9)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:269:37)
+    at async DevServer.handleRequestImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\base-server.js:818:17)
+    at async C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:179:21)
+    at async handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:359:24)
+    at async requestHandlerImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:383:13)
+    at async Server.requestListener (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\start-server.js:141:13)
+ GET /api/planetary-positions?date=2025-07-25T13:58:14.606Z 500 in 6ms
+Calculating ayanamsa for Julian Day: 2460881.9154468286
+Using Lahiri ayanamsa (SE_SIDM_LAHIRI = 1)
+Sidereal mode set successfully
+Successfully calculated ayanamsa: 24.214200023522835
+Calculating position for Sun (ID: 0)
+Raw planet data for Sun: {
+  flag: 258,
+  error: '',
+  data: [
+    122.7263134834429,
+    0.00004240928094808549,
+    1.0157124788561636,
+    0.9557155752119577,
+    -0.000009892085686083931,
+    -0.00009544922324517781
+  ]
+}
+Planet data type: object
+Is array: false
+Object properties for Sun: [ 'flag', 'error', 'data' ]
+Sun - Tropical longitude: undefined, Ayanamsa: 24.214200023522835
+Error calculating position for Sun: Error: Invalid tropical longitude for Sun: undefined
+    at calculatePlanetPosition (webpack-internal:///(api)/./pages/api/planetary-positions.ts:117:27)
+    at handler (webpack-internal:///(api)/./pages/api/planetary-positions.ts:154:13)
+    at K (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:2877)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async U.render (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:3955)
+    at async DevServer.runApi (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:603:9)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:269:37)
+    at async DevServer.handleRequestImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\base-server.js:818:17)
+    at async C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:179:21)
+    at async handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:359:24)
+    at async requestHandlerImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:383:13)
+    at async Server.requestListener (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\start-server.js:141:13)
+Error calculating planetary positions: Error: Failed to calculate position for Sun: Invalid tropical longitude for Sun: undefined
+    at calculatePlanetPosition (webpack-internal:///(api)/./pages/api/planetary-positions.ts:150:23)
+    at handler (webpack-internal:///(api)/./pages/api/planetary-positions.ts:154:13)
+    at K (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:2877)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async U.render (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:3955)
+    at async DevServer.runApi (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:603:9)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:269:37)
+    at async DevServer.handleRequestImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\base-server.js:818:17)
+    at async C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:179:21)
+    at async handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:359:24)
+    at async requestHandlerImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:383:13)
+    at async Server.requestListener (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\start-server.js:141:13)
+ GET /api/planetary-positions?date=2025-07-25T13:58:14.606Z 500 in 7ms
+Calculating ayanamsa for Julian Day: 2460881.9154468286
+Using Lahiri ayanamsa (SE_SIDM_LAHIRI = 1)
+Sidereal mode set successfully
+Successfully calculated ayanamsa: 24.214200023522835
+Calculating position for Sun (ID: 0)
+Raw planet data for Sun: {
+  flag: 258,
+  error: '',
+  data: [
+    122.7263134834429,
+    0.00004240928094808549,
+    1.0157124788561636,
+    0.9557155752119577,
+    -0.000009892085686083931,
+    -0.00009544922324517781
+  ]
+}
+Planet data type: object
+Is array: false
+Object properties for Sun: [ 'flag', 'error', 'data' ]
+Sun - Tropical longitude: undefined, Ayanamsa: 24.214200023522835
+Error calculating position for Sun: Error: Invalid tropical longitude for Sun: undefined
+    at calculatePlanetPosition (webpack-internal:///(api)/./pages/api/planetary-positions.ts:117:27)
+    at handler (webpack-internal:///(api)/./pages/api/planetary-positions.ts:154:13)
+    at K (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:2877)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async U.render (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:3955)
+    at async DevServer.runApi (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:603:9)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:269:37)
+    at async DevServer.handleRequestImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\base-server.js:818:17)
+    at async C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:179:21)
+    at async handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:359:24)
+    at async requestHandlerImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:383:13)
+    at async Server.requestListener (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\start-server.js:141:13)
+Error calculating planetary positions: Error: Failed to calculate position for Sun: Invalid tropical longitude for Sun: undefined
+    at calculatePlanetPosition (webpack-internal:///(api)/./pages/api/planetary-positions.ts:150:23)
+    at handler (webpack-internal:///(api)/./pages/api/planetary-positions.ts:154:13)
+    at K (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:2877)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async U.render (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:3955)
+    at async DevServer.runApi (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:603:9)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:269:37)
+    at async DevServer.handleRequestImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\base-server.js:818:17)
+    at async C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:179:21)
+    at async handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:359:24)
+    at async requestHandlerImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:383:13)
+    at async Server.requestListener (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\start-server.js:141:13)
+ GET /api/planetary-positions?date=2025-07-25T13:58:14.606Z 500 in 7ms
+Calculating ayanamsa for Julian Day: 2460881.9154468286
+Using Lahiri ayanamsa (SE_SIDM_LAHIRI = 1)
+Sidereal mode set successfully
+Successfully calculated ayanamsa: 24.214200023522835
+Calculating position for Sun (ID: 0)
+Raw planet data for Sun: {
+  flag: 258,
+  error: '',
+  data: [
+    122.7263134834429,
+    0.00004240928094808549,
+    1.0157124788561636,
+    0.9557155752119577,
+    -0.000009892085686083931,
+    -0.00009544922324517781
+  ]
+}
+Planet data type: object
+Is array: false
+Object properties for Sun: [ 'flag', 'error', 'data' ]
+Sun - Tropical longitude: undefined, Ayanamsa: 24.214200023522835
+Error calculating position for Sun: Error: Invalid tropical longitude for Sun: undefined
+    at calculatePlanetPosition (webpack-internal:///(api)/./pages/api/planetary-positions.ts:117:27)
+    at handler (webpack-internal:///(api)/./pages/api/planetary-positions.ts:154:13)
+    at K (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:2877)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async U.render (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:3955)
+    at async DevServer.runApi (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:603:9)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:269:37)
+    at async DevServer.handleRequestImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\base-server.js:818:17)
+    at async C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:179:21)
+    at async handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:359:24)
+    at async requestHandlerImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:383:13)
+    at async Server.requestListener (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\start-server.js:141:13)
+Error calculating planetary positions: Error: Failed to calculate position for Sun: Invalid tropical longitude for Sun: undefined
+    at calculatePlanetPosition (webpack-internal:///(api)/./pages/api/planetary-positions.ts:150:23)
+    at handler (webpack-internal:///(api)/./pages/api/planetary-positions.ts:154:13)
+    at K (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:2877)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async U.render (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:3955)
+    at async DevServer.runApi (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:603:9)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:269:37)
+    at async DevServer.handleRequestImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\base-server.js:818:17)
+    at async C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:179:21)
+    at async handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:359:24)
+    at async requestHandlerImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:383:13)
+    at async Server.requestListener (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\start-server.js:141:13)
+ GET /api/planetary-positions?date=2025-07-25T13:58:14.606Z 500 in 6ms
+Calculating ayanamsa for Julian Day: 2460881.9154468286
+Using Lahiri ayanamsa (SE_SIDM_LAHIRI = 1)
+Sidereal mode set successfully
+Successfully calculated ayanamsa: 24.214200023522835
+Calculating position for Sun (ID: 0)
+Raw planet data for Sun: {
+  flag: 258,
+  error: '',
+  data: [
+    122.7263134834429,
+    0.00004240928094808549,
+    1.0157124788561636,
+    0.9557155752119577,
+    -0.000009892085686083931,
+    -0.00009544922324517781
+  ]
+}
+Planet data type: object
+Is array: false
+Object properties for Sun: [ 'flag', 'error', 'data' ]
+Sun - Tropical longitude: undefined, Ayanamsa: 24.214200023522835
+Error calculating position for Sun: Error: Invalid tropical longitude for Sun: undefined
+    at calculatePlanetPosition (webpack-internal:///(api)/./pages/api/planetary-positions.ts:117:27)
+    at handler (webpack-internal:///(api)/./pages/api/planetary-positions.ts:154:13)
+    at K (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:2877)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async U.render (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:3955)
+    at async DevServer.runApi (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:603:9)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:269:37)
+    at async DevServer.handleRequestImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\base-server.js:818:17)
+    at async C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:179:21)
+    at async handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:359:24)
+    at async requestHandlerImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:383:13)
+    at async Server.requestListener (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\start-server.js:141:13)
+Error calculating planetary positions: Error: Failed to calculate position for Sun: Invalid tropical longitude for Sun: undefined
+    at calculatePlanetPosition (webpack-internal:///(api)/./pages/api/planetary-positions.ts:150:23)
+    at handler (webpack-internal:///(api)/./pages/api/planetary-positions.ts:154:13)
+    at K (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:2877)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async U.render (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:3955)
+    at async DevServer.runApi (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:603:9)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:269:37)
+    at async DevServer.handleRequestImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\base-server.js:818:17)
+    at async C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:179:21)
+    at async handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:359:24)
+    at async requestHandlerImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:383:13)
+    at async Server.requestListener (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\start-server.js:141:13)
+ GET /api/planetary-positions?date=2025-07-25T13:58:14.606Z 500 in 6ms
+Calculating ayanamsa for Julian Day: 2460881.9154468286
+Using Lahiri ayanamsa (SE_SIDM_LAHIRI = 1)
+Sidereal mode set successfully
+Successfully calculated ayanamsa: 24.214200023522835
+Calculating position for Sun (ID: 0)
+Raw planet data for Sun: {
+  flag: 258,
+  error: '',
+  data: [
+    122.7263134834429,
+    0.00004240928094808549,
+    1.0157124788561636,
+    0.9557155752119577,
+    -0.000009892085686083931,
+    -0.00009544922324517781
+  ]
+}
+Planet data type: object
+Is array: false
+Object properties for Sun: [ 'flag', 'error', 'data' ]
+Sun - Tropical longitude: undefined, Ayanamsa: 24.214200023522835
+Error calculating position for Sun: Error: Invalid tropical longitude for Sun: undefined
+    at calculatePlanetPosition (webpack-internal:///(api)/./pages/api/planetary-positions.ts:117:27)
+    at handler (webpack-internal:///(api)/./pages/api/planetary-positions.ts:154:13)
+    at K (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:2877)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async U.render (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:3955)
+    at async DevServer.runApi (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:603:9)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:269:37)
+    at async DevServer.handleRequestImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\base-server.js:818:17)
+    at async C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:179:21)
+    at async handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:359:24)
+    at async requestHandlerImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:383:13)
+    at async Server.requestListener (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\start-server.js:141:13)
+Error calculating planetary positions: Error: Failed to calculate position for Sun: Invalid tropical longitude for Sun: undefined
+    at calculatePlanetPosition (webpack-internal:///(api)/./pages/api/planetary-positions.ts:150:23)
+    at handler (webpack-internal:///(api)/./pages/api/planetary-positions.ts:154:13)
+    at K (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:2877)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async U.render (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:3955)
+    at async DevServer.runApi (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:603:9)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:269:37)
+    at async DevServer.handleRequestImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\base-server.js:818:17)
+    at async C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:179:21)
+    at async handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:359:24)
+    at async requestHandlerImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:383:13)
+    at async Server.requestListener (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\start-server.js:141:13)
+ GET /api/planetary-positions?date=2025-07-25T13:58:14.606Z 500 in 7ms
+Calculating ayanamsa for Julian Day: 2460881.9154468286
+Using Lahiri ayanamsa (SE_SIDM_LAHIRI = 1)
+Sidereal mode set successfully
+Successfully calculated ayanamsa: 24.214200023522835
+Calculating position for Sun (ID: 0)
+Raw planet data for Sun: {
+  flag: 258,
+  error: '',
+  data: [
+    122.7263134834429,
+    0.00004240928094808549,
+    1.0157124788561636,
+    0.9557155752119577,
+    -0.000009892085686083931,
+    -0.00009544922324517781
+  ]
+}
+Planet data type: object
+Is array: false
+Object properties for Sun: [ 'flag', 'error', 'data' ]
+Sun - Tropical longitude: undefined, Ayanamsa: 24.214200023522835
+Error calculating position for Sun: Error: Invalid tropical longitude for Sun: undefined
+    at calculatePlanetPosition (webpack-internal:///(api)/./pages/api/planetary-positions.ts:117:27)
+    at handler (webpack-internal:///(api)/./pages/api/planetary-positions.ts:154:13)
+    at K (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:2877)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async U.render (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\compiled\next-server\pages-api.runtime.dev.js:21:3955)
+    at async DevServer.runApi (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:603:9)
+    at async NextNodeServer.handleCatchallRenderRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\next-server.js:269:37)
+    at async DevServer.handleRequestImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\base-server.js:818:17)
+    at async C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:339:20
+    at async Span.traceAsyncFn (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\trace\trace.js:154:20)
+    at async DevServer.handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\dev\next-dev-server.js:336:24)
+    at async invokeRender (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:179:21)
+    at async handleRequest (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:359:24)
+    at async requestHandlerImpl (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\router-server.js:383:13)
+    at async Server.requestListener (C:\Users\kemet\PROJECTS\nkh-community-site\nkh-community-site\node_modules\next\dist\server\lib\start-server.js:141:13)

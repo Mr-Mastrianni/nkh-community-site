@@ -1,0 +1,15 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="blogGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c2d12;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#blogGradient)"/>
+  <rect x="150" y="80" width="100" height="140" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+  <line x1="170" y1="110" x2="230" y2="110" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+  <line x1="170" y1="130" x2="230" y2="130" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+  <line x1="170" y1="150" x2="220" y2="150" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+  <line x1="170" y1="170" x2="230" y2="170" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+  <text x="200" y="280" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Ancient Wisdom</text>
+</svg>
