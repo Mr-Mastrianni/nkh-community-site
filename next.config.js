@@ -2,9 +2,13 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  output: 'export',
+  trailingSlash: true,
+  basePath: process.env.NODE_ENV === 'production' ? '/nkh-community-site' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/nkh-community-site/' : '',
   images: {
     domains: ['localhost'],
-    unoptimized: process.env.NODE_ENV !== 'production',
+    unoptimized: true,
   },
   compiler: {
     styledComponents: true,
