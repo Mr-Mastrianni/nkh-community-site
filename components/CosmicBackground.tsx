@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
 const CosmicBackground = ({ onPlanetFocus }: { onPlanetFocus?: (planetName: string | null) => void }) => {
@@ -13,6 +13,7 @@ const CosmicBackground = ({ onPlanetFocus }: { onPlanetFocus?: (planetName: stri
   const milkyWayRef = useRef<THREE.Mesh | null>(null);
   const focusedPlanetRef = useRef<string | null>(null);
   const planetObjectsRef = useRef<Record<string, THREE.Mesh>>({});
+  const [hasError, setHasError] = useState(false);
 
   // Create a ref to store the focus function so it can be accessed externally
   const focusOnPlanetRef = useRef<(planetName: string | null) => void>();
@@ -20,16 +21,14 @@ const CosmicBackground = ({ onPlanetFocus }: { onPlanetFocus?: (planetName: stri
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // Check if WebGL is supported
-    const canvas = document.createElement('canvas');
-    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-    if (!gl) {
-      const warning = document.createElement('div');
-      warning.innerHTML = 'WebGL is not supported on this device.';
-      warning.style.cssText = 'color: white; text-align: center; padding: 20px;';
-      containerRef.current.appendChild(warning);
-      return;
-    }
+    try {
+      // Check if WebGL is supported
+      const canvas = document.createElement('canvas');
+      const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+      if (!gl) {
+        setHasError(true);
+        return;
+      }
 
     // Initialize scene with deep space background
     const scene = new THREE.Scene();
@@ -217,59 +216,78 @@ const CosmicBackground = ({ onPlanetFocus }: { onPlanetFocus?: (planetName: stri
     // Animation loop
     let frameId: number;
     let time = 0;
+    let isAnimating = true;
 
     const animate = () => {
-      frameId = requestAnimationFrame(animate);
-      time += 0.01;
+      if (!isAnimating) return;
+      
+      try {
+        frameId = requestAnimationFrame(animate);
+        time += 0.01;
 
-      // Subtle star twinkling like real stars
-      if (starsRef.current) {
-        // Very slow celestial sphere rotation
-        starsRef.current.rotation.y += 0.00005;
+        // Subtle star twinkling like real stars
+        if (starsRef.current && starsRef.current.material) {
+          // Very slow celestial sphere rotation
+          starsRef.current.rotation.y += 0.00005;
 
-        // Gentle twinkling effect
-        const starsMaterial = starsRef.current.material as THREE.PointsMaterial;
-        starsMaterial.opacity = 0.85 + Math.sin(time * 1.5) * 0.05;
-      }
-
-      // Realistic planetary motion
-      if (planetsRef.current) {
-        planetsRef.current.children.forEach((planet) => {
-          const mesh = planet as THREE.Mesh;
-          const userData = mesh.userData;
-
-          // Update orbital angle
-          userData.angle += userData.speed;
-
-          // Update planet position in orbit
-          mesh.position.x = Math.cos(userData.angle) * userData.distance;
-          mesh.position.z = Math.sin(userData.angle) * userData.distance;
-
-          // Add slight vertical oscillation for realism
-          mesh.position.y = Math.sin(userData.angle * 0.3) * 20;
-
-          // Highlight focused planet
-          if (focusedPlanetRef.current === mesh.name) {
-            (mesh.material as THREE.MeshBasicMaterial).emissive = new THREE.Color(0xffffff);
-            (mesh.material as THREE.MeshBasicMaterial).emissiveIntensity = 0.8;
-            // Make the planet slightly larger when focused
-            mesh.scale.set(1.2, 1.2, 1.2);
-          } else {
-            (mesh.material as THREE.MeshBasicMaterial).emissive = new THREE.Color(0x000000);
-            (mesh.material as THREE.MeshBasicMaterial).emissiveIntensity = 0;
-            // Reset scale for non-focused planets
-            mesh.scale.set(1, 1, 1);
+          // Gentle twinkling effect
+          const starsMaterial = starsRef.current.material as THREE.PointsMaterial;
+          if (starsMaterial && typeof starsMaterial.opacity !== 'undefined') {
+            starsMaterial.opacity = 0.85 + Math.sin(time * 1.5) * 0.05;
           }
-        });
-      }
+        }
 
-      // Subtle Milky Way movement
-      if (milkyWayRef.current) {
-        milkyWayRef.current.rotation.z += 0.00002;
-      }
+        // Realistic planetary motion
+        if (planetsRef.current && planetsRef.current.children) {
+          planetsRef.current.children.forEach((planet) => {
+            try {
+              const mesh = planet as THREE.Mesh;
+              if (!mesh || !mesh.userData || !mesh.material || !mesh.position) return;
+              
+              const userData = mesh.userData;
 
-      if (rendererRef.current && sceneRef.current && cameraRef.current) {
-        rendererRef.current.render(sceneRef.current, cameraRef.current);
+              // Update orbital angle
+              userData.angle += userData.speed;
+
+              // Update planet position in orbit
+              mesh.position.x = Math.cos(userData.angle) * userData.distance;
+              mesh.position.z = Math.sin(userData.angle) * userData.distance;
+
+              // Add slight vertical oscillation for realism
+              mesh.position.y = Math.sin(userData.angle * 0.3) * 20;
+
+              // Highlight focused planet
+              const material = mesh.material as THREE.MeshBasicMaterial;
+              if (material && material.emissive && typeof material.emissiveIntensity !== 'undefined') {
+                if (focusedPlanetRef.current === mesh.name) {
+                  material.emissive.setHex(0xffffff);
+                  material.emissiveIntensity = 0.8;
+                  // Make the planet slightly larger when focused
+                  mesh.scale.set(1.2, 1.2, 1.2);
+                } else {
+                  material.emissive.setHex(0x000000);
+                  material.emissiveIntensity = 0;
+                  // Reset scale for non-focused planets
+                  mesh.scale.set(1, 1, 1);
+                }
+              }
+            } catch (planetError) {
+              console.warn('Error updating planet:', planetError);
+            }
+          });
+        }
+
+        // Subtle Milky Way movement
+        if (milkyWayRef.current && milkyWayRef.current.rotation) {
+          milkyWayRef.current.rotation.z += 0.00002;
+        }
+
+        if (rendererRef.current && sceneRef.current && cameraRef.current) {
+          rendererRef.current.render(sceneRef.current, cameraRef.current);
+        }
+      } catch (animationError) {
+        console.error('Animation error:', animationError);
+        isAnimating = false;
       }
     };
 
@@ -283,19 +301,28 @@ const CosmicBackground = ({ onPlanetFocus }: { onPlanetFocus?: (planetName: stri
       }
       
       // Highlight the focused planet
-      if (planetsRef.current) {
+      if (planetsRef.current && planetsRef.current.children) {
         planetsRef.current.children.forEach((planet) => {
-          const mesh = planet as THREE.Mesh;
-          if (mesh.name === planetName) {
-            (mesh.material as THREE.MeshBasicMaterial).emissive = new THREE.Color(0xffffff);
-            (mesh.material as THREE.MeshBasicMaterial).emissiveIntensity = 0.8;
-            // Make the planet slightly larger when focused
-            mesh.scale.set(1.2, 1.2, 1.2);
-          } else {
-            (mesh.material as THREE.MeshBasicMaterial).emissive = new THREE.Color(0x000000);
-            (mesh.material as THREE.MeshBasicMaterial).emissiveIntensity = 0;
-            // Reset scale for non-focused planets
-            mesh.scale.set(1, 1, 1);
+          try {
+            const mesh = planet as THREE.Mesh;
+            if (!mesh || !mesh.material) return;
+            
+            const material = mesh.material as THREE.MeshBasicMaterial;
+            if (!material || !material.emissive || typeof material.emissiveIntensity === 'undefined') return;
+            
+            if (mesh.name === planetName) {
+              material.emissive.setHex(0xffffff);
+              material.emissiveIntensity = 0.8;
+              // Make the planet slightly larger when focused
+              mesh.scale.set(1.2, 1.2, 1.2);
+            } else {
+              material.emissive.setHex(0x000000);
+              material.emissiveIntensity = 0;
+              // Reset scale for non-focused planets
+              mesh.scale.set(1, 1, 1);
+            }
+          } catch (focusError) {
+            console.warn('Error focusing on planet:', focusError);
           }
         });
       }
@@ -311,37 +338,97 @@ const CosmicBackground = ({ onPlanetFocus }: { onPlanetFocus?: (planetName: stri
 
     // Cleanup
     return () => {
-      cancelAnimationFrame(frameId);
+      // Stop animation first
+      isAnimating = false;
+      if (frameId) {
+        cancelAnimationFrame(frameId);
+      }
+      
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('scroll', handleScroll);
 
-      if (rendererRef.current && rendererRef.current.domElement && containerRef.current) {
-        containerRef.current.removeChild(rendererRef.current.domElement);
-      }
+      try {
+        // Safely remove renderer from DOM
+        if (rendererRef.current && rendererRef.current.domElement && containerRef.current) {
+          if (containerRef.current.contains(rendererRef.current.domElement)) {
+            containerRef.current.removeChild(rendererRef.current.domElement);
+          }
+        }
 
-      // Dispose geometries and materials
-      if (starsRef.current) {
-        starsRef.current.geometry.dispose();
-        (starsRef.current.material as THREE.Material).dispose();
-      }
+        // Dispose geometries and materials safely
+        if (starsRef.current) {
+          if (starsRef.current.geometry) {
+            starsRef.current.geometry.dispose();
+          }
+          if (starsRef.current.material) {
+            (starsRef.current.material as THREE.Material).dispose();
+          }
+        }
 
-      if (planetsRef.current) {
-        planetsRef.current.children.forEach(planet => {
-          const mesh = planet as THREE.Mesh;
-          mesh.geometry.dispose();
-          (mesh.material as THREE.Material).dispose();
-        });
-      }
+        if (planetsRef.current && planetsRef.current.children) {
+          planetsRef.current.children.forEach(planet => {
+            try {
+              const mesh = planet as THREE.Mesh;
+              if (mesh.geometry) {
+                mesh.geometry.dispose();
+              }
+              if (mesh.material) {
+                (mesh.material as THREE.Material).dispose();
+              }
+            } catch (disposeError) {
+              console.warn('Error disposing planet:', disposeError);
+            }
+          });
+        }
 
-      if (milkyWayRef.current) {
-        milkyWayRef.current.geometry.dispose();
-        (milkyWayRef.current.material as THREE.Material).dispose();
+        if (milkyWayRef.current) {
+          if (milkyWayRef.current.geometry) {
+            milkyWayRef.current.geometry.dispose();
+          }
+          if (milkyWayRef.current.material) {
+            (milkyWayRef.current.material as THREE.Material).dispose();
+          }
+        }
+
+        // Dispose renderer
+        if (rendererRef.current) {
+          rendererRef.current.dispose();
+        }
+      } catch (cleanupError) {
+        console.warn('Error during cleanup:', cleanupError);
       }
 
       // Clean up global function
-      delete (window as any).focusOnPlanet;
+      if (typeof window !== 'undefined') {
+        delete (window as any).focusOnPlanet;
+      }
     };
+    } catch (initError) {
+      console.error('Error initializing CosmicBackground:', initError);
+      setHasError(true);
+    }
   }, []);
+
+  if (hasError) {
+    // Fallback CSS gradient background when WebGL fails
+    return (
+      <div 
+        className="fixed inset-0 z-[-1] pointer-events-none"
+        style={{
+          background: 'linear-gradient(135deg, #0a0a23 0%, #1a1a3e 25%, #2d2d5f 50%, #1a1a3e 75%, #0a0a23 100%)',
+          animation: 'cosmic-pulse 8s ease-in-out infinite'
+        }}
+        aria-hidden="true"
+      >
+        <style jsx>{`
+          @keyframes cosmic-pulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+          }
+        `}</style>
+      </div>
+    );
+  }
 
   return (
     <div
